@@ -2,11 +2,15 @@
 
 Move applications and databases to AWS — lift-and-shift, replication, and offline transfer.
 
-**Topics:** [MGN](#aws-application-migration-service-mgn) · [DMS](#aws-database-migration-service-dms) · [DataSync](#aws-datasync) · [Snowball](#aws-snowball)
+**Topics:**
+1. [Application Migration Service](#1-aws-application-migration-service-mgn)
+2. [Database Migration Service](#2-aws-database-migration-service-dms)
+3. [DataSync](#3-aws-datasync)
+4. [Snowball](#4-aws-snowball)
 
 ---
 
-# AWS Application Migration Service (MGN)
+# 1. AWS Application Migration Service (MGN)
 
 ## What is it?
 
@@ -36,19 +40,26 @@ Source Server → Replication Agent → Staging Subnet (EC2) → Cutover → Pro
 
 ## Workflow
 
-Install Agent → Configure Replication → Continuous Sync → Test Launch → Cutover → Production on AWS
+1. Install Agent
+2. Configure Replication
+3. Continuous Sync
+4. Test Launch
+5. Cutover
+6. Production on AWS
 
 ## Advantages
 
-Minimal downtime cutover, block-level replication, supports heterogeneous sources, automated conversion.
+- Minimal downtime cutover, block-level replication, supports heterogeneous sources, automated conversion.
 
 ## Limitations
 
-Requires agent installation. Staging area costs during replication. Not for refactoring (lift-and-shift only).
+- Requires agent installation
+- Staging area costs during replication
+- Not for refactoring (lift-and-shift only)
 
 ## Common Use Cases
 
-Data center migration, disaster recovery setup, server consolidation, cloud-first migration projects.
+- Data center migration, disaster recovery setup, server consolidation, cloud-first migration projects.
 
 ## Comparison
 
@@ -59,15 +70,15 @@ Data center migration, disaster recovery setup, server consolidation, cloud-firs
 
 ## Related AWS Services
 
-- [EC2](../01-compute/README.md#amazon-ec2) · [VPC](../04-networking/README.md#vpc) · [DMS](#aws-database-migration-service-dms)
-
-## Interview Questions
-
-1. MGN vs manual AMI migration? 2. What is cutover? 3. Replication agent purpose?
+- [EC2](../01-compute/README.md#1-amazon-ec2)
+- [VPC](../04-networking/README.md#1-vpc)
+- [DMS](#2-aws-database-migration-service-dms)
 
 ## Exam Tips
 
-MGN = lift-and-shift with continuous replication. Cutover = final switch with minimal downtime. Good to know.
+- MGN = lift-and-shift with continuous replication
+- Cutover = final switch with minimal downtime
+- Good to know
 
 ## One Line Definition
 
@@ -75,7 +86,7 @@ MGN = lift-and-shift with continuous replication. Cutover = final switch with mi
 
 ---
 
-# AWS Database Migration Service (DMS)
+# 2. AWS Database Migration Service (DMS)
 
 ## What is it?
 
@@ -123,11 +134,9 @@ Oracle to Aurora migration, on-prem to RDS, database consolidation, cross-engine
 
 ## Related AWS Services
 
-- [RDS](../03-database/README.md#amazon-rds) · [Aurora](../03-database/README.md#amazon-aurora) · [S3](../02-storage/README.md#amazon-s3)
-
-## Interview Questions
-
-1. Homogeneous vs heterogeneous migration? 2. Full load vs CDC? 3. DMS vs native DB backup/restore?
+- [RDS](../03-database/README.md#1-amazon-rds)
+- [Aurora](../03-database/README.md#2-amazon-aurora)
+- [S3](../02-storage/README.md#1-amazon-s3)
 
 ## Exam Tips
 
@@ -139,7 +148,7 @@ CDC = Change Data Capture for ongoing replication. SCT = schema conversion for h
 
 ---
 
-# AWS DataSync
+# 3. AWS DataSync
 
 ## What is it?
 
@@ -192,11 +201,9 @@ One-time bulk data migration, recurring sync to cloud, archive migration, hybrid
 
 ## Related AWS Services
 
-- [S3](../02-storage/README.md#amazon-s3) · [EFS](../02-storage/README.md#amazon-efs) · [Direct Connect](../04-networking/README.md#site-to-site-vpn)
-
-## Interview Questions
-
-1. DataSync vs Snowball? 2. DataSync vs Storage Gateway? 3. When use DataSync?
+- [S3](../02-storage/README.md#1-amazon-s3)
+- [EFS](../02-storage/README.md#3-amazon-efs)
+- [Direct Connect](../04-networking/README.md#7-site-to-site-vpn)
 
 ## Exam Tips
 
@@ -208,7 +215,7 @@ DataSync = online transfer. Snowball = offline (large datasets, slow connection)
 
 ---
 
-# AWS Snowball
+# 4. AWS Snowball
 
 ## What is it?
 
@@ -263,11 +270,9 @@ Data center decommission, large media archives, genomics data, disaster recovery
 
 ## Related AWS Services
 
-- [S3](../02-storage/README.md#amazon-s3) · [Direct Connect](../04-networking/README.md#site-to-site-vpn) · [Storage Gateway](../02-storage/README.md#aws-storage-gateway)
-
-## Interview Questions
-
-1. Snowball vs DataSync vs Direct Connect? 2. Snowball Edge use cases? 3. When is Snowmobile needed?
+- [S3](../02-storage/README.md#1-amazon-s3)
+- [Direct Connect](../04-networking/README.md#7-site-to-site-vpn)
+- [Storage Gateway](../02-storage/README.md#5-aws-storage-gateway)
 
 ## Exam Tips
 

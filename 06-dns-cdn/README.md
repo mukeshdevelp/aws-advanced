@@ -2,11 +2,13 @@
 
 Deliver applications globally with DNS routing and edge caching.
 
-**Topics:** [Route 53](#amazon-route-53) · [CloudFront](#amazon-cloudfront)
+**Topics:**
+1. [Route 53](#1-amazon-route-53)
+2. [CloudFront](#2-amazon-cloudfront)
 
 ---
 
-# Amazon Route 53
+# 1. Amazon Route 53
 
 ## What is it?
 
@@ -39,19 +41,25 @@ User Query → Route 53 Resolver → Routing Policy → Target (ALB/CloudFront/S
 
 ## Workflow
 
-Register/Transfer Domain → Create Hosted Zone → Add Records → Configure Routing Policy → DNS Resolves Globally
+1. Register/Transfer Domain
+2. Create Hosted Zone
+3. Add Records
+4. Configure Routing Policy
+5. DNS Resolves Globally
 
 ## Advantages
 
-99.99% SLA, alias records (free queries to AWS resources), health-check failover, private DNS for VPC.
+- 99.99% SLA, alias records (free queries to AWS resources), health-check failover, private DNS for VPC.
 
 ## Limitations
 
-DNS propagation delay (TTL). Alias records only for AWS resources. Private hosted zones need VPC association.
+- DNS propagation delay (TTL)
+- Alias records only for AWS resources
+- Private hosted zones need VPC association
 
 ## Common Use Cases
 
-Domain management, multi-region failover, blue/green DNS cutover, hybrid DNS (on-prem + AWS).
+- Domain management, multi-region failover, blue/green DNS cutover, hybrid DNS (on-prem + AWS).
 
 ## Comparison
 
@@ -63,15 +71,15 @@ Domain management, multi-region failover, blue/green DNS cutover, hybrid DNS (on
 
 ## Related AWS Services
 
-- [ALB](../05-load-balancing/README.md#application-load-balancer-alb) · [CloudFront](#amazon-cloudfront) · [S3](../02-storage/README.md#amazon-s3) · [Global Accelerator](../04-networking/README.md#aws-global-accelerator)
-
-## Interview Questions
-
-1. Routing policy types and use cases? 2. Alias vs CNAME? 3. Public vs private hosted zone?
+- [ALB](../05-load-balancing/README.md#1-application-load-balancer-alb)
+- [CloudFront](#2-amazon-cloudfront)
+- [S3](../02-storage/README.md#1-amazon-s3)
+- [Global Accelerator](../04-networking/README.md#8-aws-global-accelerator)
 
 ## Exam Tips
 
-Know all 6 routing policies: Simple, Weighted, Latency, Failover, Geolocation, Geoproximity. Alias = free, CNAME = charged.
+- Know all 6 routing policies: Simple, Weighted, Latency, Failover, Geolocation, Geoproximity
+- Alias = free, CNAME = charged
 
 ## One Line Definition
 
@@ -79,7 +87,7 @@ Know all 6 routing policies: Simple, Weighted, Latency, Failover, Geolocation, G
 
 ---
 
-# Amazon CloudFront
+# 2. Amazon CloudFront
 
 ## What is it?
 
@@ -138,11 +146,11 @@ Static website delivery, video streaming, software downloads, API acceleration, 
 
 ## Related AWS Services
 
-- [S3](../02-storage/README.md#amazon-s3) · [Route 53](#amazon-route-53) · [WAF](../07-security/README.md#aws-waf) · [ACM](../07-security/README.md#aws-certificate-manager-acm) · [Lambda](../01-compute/README.md#aws-lambda)
-
-## Interview Questions
-
-1. CloudFront vs Global Accelerator? 2. OAI vs OAC? 3. How does cache invalidation work?
+- [S3](../02-storage/README.md#1-amazon-s3)
+- [Route 53](#1-amazon-route-53)
+- [WAF](../07-security/README.md#4-aws-waf)
+- [ACM](../07-security/README.md#7-aws-security-hub)
+- [Lambda](../01-compute/README.md#1-aws-lambda)
 
 ## Exam Tips
 

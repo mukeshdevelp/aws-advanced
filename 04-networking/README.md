@@ -2,11 +2,19 @@
 
 Isolated networks, routing, security, and hybrid connectivity.
 
-**Topics:** [VPC](#vpc) · [NAT Gateway](#nat-gateway) · [Security Groups](#security-groups) · [VPC Peering](#vpc-peering) · [Transit Gateway](#transit-gateway) · [VPC Endpoints](#vpc-endpoints) · [VPN & Direct Connect](#site-to-site-vpn) · [Global Accelerator](#aws-global-accelerator)
+**Topics:**
+1. [VPC](#1-vpc)
+2. [NAT Gateway](#2-nat-gateway)
+3. [Security Groups](#3-security-groups)
+4. [VPC Peering](#4-vpc-peering)
+5. [Transit Gateway](#5-transit-gateway)
+6. [VPC Endpoints](#6-vpc-endpoints)
+7. [Site-to-Site VPN](#7-site-to-site-vpn)
+8. [Global Accelerator](#8-aws-global-accelerator)
 
 ---
 
-# VPC
+# 1. VPC
 
 ## What is it?
 
@@ -14,7 +22,9 @@ Virtual Private Cloud — isolated network in a Region with **Subnets** (1 per A
 
 ## Why do we use it?
 
-Network isolation · Public/private tiers · Foundation for all AWS deployments
+- Network isolation
+- Public/private tiers
+- Foundation for all AWS deployments
 
 ## Architecture
 
@@ -38,20 +48,30 @@ VPC (10.0.0.0/16)
 
 ## Workflow
 
-Create VPC → Subnets (multi-AZ) → Attach IGW → Route Tables → Launch Resources
+1. Create VPC
+2. Subnets (multi-AZ)
+3. Attach IGW
+4. Route Tables
+5. Launch Resources
 
-## Advantages & Limitations
+## Advantages
 
-**+** Full control, multi-tier design, hybrid connectivity  
-**−** CIDR fixed at creation · 5 VPC/Region default
+- Full control, multi-tier design, hybrid connectivity
 
+## Limitations
+
+- CIDR fixed at creation
+- 5 VPC/Region default
 ## Related AWS Services
 
-[EC2](../01-compute/README.md#amazon-ec2) · [NAT Gateway](#nat-gateway) · [ALB](../05-load-balancing/README.md)
+- [EC2](../01-compute/README.md#1-amazon-ec2)
+- [NAT Gateway](#2-nat-gateway)
+- [ALB](../05-load-balancing/README.md)
 
 ## Exam Tips
 
-Public = route to IGW. Private = NAT for outbound. 1 subnet = 1 AZ.
+- Public = route to IGW
+- Private = NAT for outbound. 1 subnet = 1 AZ
 
 ## One Line Definition
 
@@ -59,7 +79,7 @@ Public = route to IGW. Private = NAT for outbound. 1 subnet = 1 AZ.
 
 ---
 
-# NAT Gateway
+# 2. NAT Gateway
 
 ## What is it?
 
@@ -92,7 +112,7 @@ Private EC2 → NAT GW (public subnet) → IGW → Internet
 
 ---
 
-# Security Groups
+# 3. Security Groups
 
 ## What is it?
 
@@ -122,7 +142,9 @@ Internet → NACL (subnet) → SG (instance) → EC2
 
 ## Related AWS Services
 
-[VPC](#vpc) · [RDS](../03-database/README.md#amazon-rds) · [ALB](../05-load-balancing/README.md)
+- [VPC](#1-vpc)
+- [RDS](../03-database/README.md#1-amazon-rds)
+- [ALB](../05-load-balancing/README.md)
 
 ## Exam Tips
 
@@ -134,7 +156,7 @@ SG = stateful. NACL = numbered rules, processed in order.
 
 ---
 
-# VPC Peering
+# 4. VPC Peering
 
 ## What is it?
 
@@ -156,11 +178,14 @@ VPC-A (10.0.0.0/16) ←── Peering ──→ VPC-B (10.1.0.0/16)
 | **Route Table Entry** | Add peer VPC CIDR on both sides |
 | **DNS Resolution** | Optional cross-VPC hostname resolution |
 
-## Advantages & Limitations
+## Advantages
 
-**+** Low latency, private, cross-account  
-**−** NOT transitive · CIDR must not overlap
+- Low latency, private, cross-account
 
+## Limitations
+
+- NOT transitive
+- CIDR must not overlap
 ## Comparison
 
 | VPC Peering | Transit Gateway |
@@ -174,7 +199,7 @@ VPC-A (10.0.0.0/16) ←── Peering ──→ VPC-B (10.1.0.0/16)
 
 ---
 
-# Transit Gateway
+# 5. Transit Gateway
 
 ## What is it?
 
@@ -201,7 +226,7 @@ VPC-A/B/C ──→ Transit Gateway ←── VPN / Direct Connect
 
 ---
 
-# VPC Endpoints
+# 6. VPC Endpoints
 
 ## What is it?
 
@@ -233,7 +258,8 @@ Consumer VPC → PrivateLink → Provider Service
 
 ## Related AWS Services
 
-[S3](../02-storage/README.md#amazon-s3) · [KMS](../07-security/README.md#aws-kms)
+- [S3](../02-storage/README.md#1-amazon-s3)
+- [KMS](../07-security/README.md#2-aws-kms)
 
 ## One Line Definition
 
@@ -241,7 +267,7 @@ Consumer VPC → PrivateLink → Provider Service
 
 ---
 
-# Site-to-Site VPN
+# 7. Site-to-Site VPN
 
 ## What is it?
 
@@ -273,7 +299,8 @@ On-Prem ──DX───→ DX Location → DX Gateway → VPC
 
 ## Related AWS Services
 
-[Transit Gateway](#transit-gateway) · [Storage Gateway](../02-storage/README.md#aws-storage-gateway)
+- [Transit Gateway](#5-transit-gateway)
+- [Storage Gateway](../02-storage/README.md#5-aws-storage-gateway)
 
 ## Exam Tips
 
@@ -285,7 +312,7 @@ VPN = 2 redundant tunnels. DX + VPN = backup pattern.
 
 ---
 
-# AWS Global Accelerator
+# 8. AWS Global Accelerator
 
 ## What is it?
 
@@ -316,7 +343,8 @@ Enterprise → Cloud WAN Core → Sites/VPCs/VPN/DX
 
 ## Related AWS Services
 
-[Route 53](../06-dns-cdn/README.md#amazon-route-53) · [Shield](../07-security/README.md#aws-waf)
+- [Route 53](../06-dns-cdn/README.md#1-amazon-route-53)
+- [Shield](../07-security/README.md#4-aws-waf)
 
 ## Exam Tips
 

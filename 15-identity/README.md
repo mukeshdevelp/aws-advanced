@@ -2,11 +2,15 @@
 
 Authentication and user management — who can access your applications and AWS resources.
 
-**Topics:** [IAM](#iam) · [IAM Identity Center](#iam-identity-center) · [Amazon Cognito](#amazon-cognito) · [AWS Directory Service](#aws-directory-service)
+**Topics:**
+1. [IAM](#1-iam)
+2. [IAM Identity Center](#2-iam-identity-center)
+3. [Cognito](#3-amazon-cognito)
+4. [Directory Service](#4-aws-directory-service)
 
 ---
 
-# IAM
+# 1. IAM
 
 ## What is it?
 
@@ -41,15 +45,20 @@ User/Role → Policy Evaluation → Allow/Deny → AWS Resource
 
 ## Workflow
 
-Create Role/User → Attach Policy → Enable MFA → Entity Accesses AWS → CloudTrail Audits
+1. Create Role/User
+2. Attach Policy
+3. Enable MFA
+4. Entity Accesses AWS
+5. CloudTrail Audits
 
 ## Advantages
 
-Granular permissions, free, role-based access, temporary credentials via STS, global service.
+- Granular permissions, free, role-based access, temporary credentials via STS, global service.
 
 ## Limitations
 
-Policy complexity at scale. 5000 IAM users per account. Does not manage application users (use Cognito).
+- Policy complexity at scale. 5000 IAM users per account
+- Does not manage application users (use Cognito)
 
 ## Comparison
 
@@ -61,15 +70,15 @@ Policy complexity at scale. 5000 IAM users per account. Does not manage applicat
 
 ## Related AWS Services
 
-- [Security IAM](../07-security/README.md#iam) · [CloudTrail](../08-monitoring/README.md#aws-cloudtrail) · [Organizations](../12-governance/README.md#aws-organizations)
-
-## Interview Questions
-
-1. User vs Role vs Group? 2. How do EC2 instance roles work? 3. Policy evaluation order?
+- [Security IAM](../07-security/README.md#1-iam)
+- [CloudTrail](../08-monitoring/README.md#2-aws-cloudtrail)
+- [Organizations](../12-governance/README.md#1-aws-organizations)
 
 ## Exam Tips
 
-See full details in [Security section](../07-security/README.md#iam). Roles for services. Explicit Deny > Allow > default Deny.
+- See full details in [Security section](../07-security/README.md#1-iam)
+- Roles for services
+- Explicit Deny > Allow > default Deny
 
 ## One Line Definition
 
@@ -77,7 +86,7 @@ See full details in [Security section](../07-security/README.md#iam). Roles for 
 
 ---
 
-# IAM Identity Center
+# 2. IAM Identity Center
 
 ## What is it?
 
@@ -121,15 +130,14 @@ Requires Organizations. Permission sets map to IAM roles (indirect). Learning cu
 
 ## Common Use Cases
 
-Enterprise multi-account access, replace individual IAM users, contractor access, SaaS app SSO.
+- Enterprise multi-account access, replace individual IAM users, contractor access
+- SaaS app SSO
 
 ## Related AWS Services
 
-- [Organizations](../12-governance/README.md#aws-organizations) · [IAM](#iam) · [Control Tower](../12-governance/README.md#aws-control-tower)
-
-## Interview Questions
-
-1. Identity Center vs IAM users? 2. Permission Set vs IAM Policy? 3. External IdP integration?
+- [Organizations](../12-governance/README.md#1-aws-organizations)
+- [IAM](#1-iam)
+- [Control Tower](../12-governance/README.md#2-aws-control-tower)
 
 ## Exam Tips
 
@@ -141,7 +149,7 @@ Identity Center = SSO for humans across accounts. Permission Set = template for 
 
 ---
 
-# Amazon Cognito
+# 3. Amazon Cognito
 
 ## What is it?
 
@@ -199,11 +207,9 @@ Mobile app authentication, SaaS user management, guest access, federated AWS acc
 
 ## Related AWS Services
 
-- [API Gateway](../14-serverless/README.md#api-gateway) · [IAM](#iam) · [Lambda](../01-compute/README.md#aws-lambda)
-
-## Interview Questions
-
-1. User Pool vs Identity Pool? 2. Cognito vs IAM? 3. Lambda triggers in Cognito?
+- [API Gateway](../14-serverless/README.md#2-api-gateway)
+- [IAM](#1-iam)
+- [Lambda](../01-compute/README.md#1-aws-lambda)
 
 ## Exam Tips
 
@@ -215,7 +221,7 @@ User Pool = authentication (JWT). Identity Pool = authorize AWS service access. 
 
 ---
 
-# AWS Directory Service
+# 4. AWS Directory Service
 
 ## What is it?
 
@@ -272,11 +278,9 @@ Windows workload domain join, FSx for Windows authentication, hybrid AD, enterpr
 
 ## Related AWS Services
 
-- [FSx](../02-storage/README.md#amazon-fsx) · [EC2](../01-compute/README.md#amazon-ec2) · [Identity Center](#iam-identity-center)
-
-## Interview Questions
-
-1. Managed AD vs Simple AD vs AD Connector? 2. Why join EC2 to a domain? 3. Trust relationship?
+- [FSx](../02-storage/README.md#4-amazon-fsx)
+- [EC2](../01-compute/README.md#1-amazon-ec2)
+- [Identity Center](#2-iam-identity-center)
 
 ## Exam Tips
 

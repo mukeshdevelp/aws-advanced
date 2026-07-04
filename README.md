@@ -30,25 +30,41 @@ Based on the full topic list in [extra.md](./extra.md).
 
 ## Recommended Learning Order
 
-1. [EC2](./01-compute/README.md#amazon-ec2) → [VPC](./04-networking/README.md#vpc) → [IAM](./15-identity/README.md#iam)
-2. [S3](./02-storage/README.md#amazon-s3) → [RDS](./03-database/README.md#amazon-rds)
-3. [Auto Scaling](./01-compute/README.md#auto-scaling) → [Load Balancer](./05-load-balancing/README.md#application-load-balancer-alb)
-4. [Route 53](./06-dns-cdn/README.md#amazon-route-53) → [CloudFront](./06-dns-cdn/README.md#amazon-cloudfront)
-5. [Lambda](./14-serverless/README.md#aws-lambda) → [API Gateway](./14-serverless/README.md#api-gateway)
-6. [CloudWatch](./08-monitoring/README.md#amazon-cloudwatch) → [CloudTrail](./08-monitoring/README.md#aws-cloudtrail)
-7. [ECR](./13-containers/README.md#amazon-ecr) → [ECS](./13-containers/README.md#amazon-ecs) → [EKS](./13-containers/README.md#amazon-eks)
-8. [SQS](./10-messaging/README.md#amazon-sqs) → [SNS](./10-messaging/README.md#amazon-sns) → [EventBridge](./10-messaging/README.md#amazon-eventbridge)
-9. [CloudFormation](./09-devops/README.md#aws-cloudformation) → [Organizations](./12-governance/README.md#aws-organizations)
+1. [EC2](./01-compute/README.md#1-amazon-ec2) → [VPC](./04-networking/README.md#1-vpc) → [IAM](./15-identity/README.md#1-iam)
+2. [S3](./02-storage/README.md#1-amazon-s3) → [RDS](./03-database/README.md#1-amazon-rds)
+3. [Auto Scaling](./01-compute/README.md#7-auto-scaling) → [Load Balancer](./05-load-balancing/README.md#1-application-load-balancer-alb)
+4. [Route 53](./06-dns-cdn/README.md#1-amazon-route-53) → [CloudFront](./06-dns-cdn/README.md#2-amazon-cloudfront)
+5. [Lambda](./14-serverless/README.md#1-aws-lambda) → [API Gateway](./14-serverless/README.md#2-api-gateway)
+6. [CloudWatch](./08-monitoring/README.md#1-amazon-cloudwatch) → [CloudTrail](./08-monitoring/README.md#2-aws-cloudtrail)
+7. [ECR](./13-containers/README.md#2-amazon-ecr) → [ECS](./13-containers/README.md#3-amazon-ecs) → [EKS](./13-containers/README.md#4-amazon-eks)
+8. [SQS](./10-messaging/README.md#1-amazon-sqs) → [SNS](./10-messaging/README.md#2-amazon-sns) → [EventBridge](./10-messaging/README.md#3-amazon-eventbridge)
+9. [CloudFormation](./09-devops/README.md#5-aws-cloudformation) → [Organizations](./12-governance/README.md#1-aws-organizations)
 
 ---
 
 ## Interview Priority
 
-**Must Know ⭐⭐⭐⭐⭐** — [EC2](./01-compute/README.md#amazon-ec2) · [IAM](./15-identity/README.md#iam) · [VPC](./04-networking/README.md#vpc) · [S3](./02-storage/README.md#amazon-s3) · [RDS](./03-database/README.md#amazon-rds) · [Route 53](./06-dns-cdn/README.md#amazon-route-53) · [ELB](./05-load-balancing/README.md) · [Lambda](./14-serverless/README.md#aws-lambda) · [ECS/EKS](./13-containers/README.md)
+**Must Know ⭐⭐⭐⭐⭐**
+- [EC2](./01-compute/README.md#1-amazon-ec2)
+- [IAM](./15-identity/README.md#1-iam)
+- [VPC](./04-networking/README.md#1-vpc)
+- [S3](./02-storage/README.md#1-amazon-s3)
+- [RDS](./03-database/README.md#1-amazon-rds)
+- [Route 53](./06-dns-cdn/README.md#1-amazon-route-53)
+- [ELB](./05-load-balancing/README.md)
+- [Lambda](./14-serverless/README.md#1-aws-lambda)
+- [ECS/EKS](./13-containers/README.md)
 
-**Important ⭐⭐⭐⭐** — [CloudFront](./06-dns-cdn/README.md#amazon-cloudfront) · [WAF](./07-security/README.md#aws-waf) · [Transit Gateway](./04-networking/README.md#transit-gateway) · [CloudFormation](./09-devops/README.md#aws-cloudformation)
+**Important ⭐⭐⭐⭐**
+- [CloudFront](./06-dns-cdn/README.md#2-amazon-cloudfront)
+- [WAF](./07-security/README.md#4-aws-waf)
+- [Transit Gateway](./04-networking/README.md#5-transit-gateway)
+- [CloudFormation](./09-devops/README.md#5-aws-cloudformation)
 
-**Good to Know ⭐⭐⭐** — [Migration](./11-migration/README.md) · [GuardDuty](./07-security/README.md#amazon-guardduty) · [Global Accelerator](./04-networking/README.md#aws-global-accelerator)
+**Good to Know ⭐⭐⭐**
+- [Migration](./11-migration/README.md)
+- [GuardDuty](./07-security/README.md#5-amazon-guardduty)
+- [Global Accelerator](./04-networking/README.md#8-aws-global-accelerator)
 
 ---
 

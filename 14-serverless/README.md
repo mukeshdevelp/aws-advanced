@@ -2,11 +2,17 @@
 
 Build applications without managing servers.
 
-**Topics:** [Lambda](#aws-lambda) · [API Gateway](#api-gateway) · [DynamoDB](#amazon-dynamodb) · [EventBridge](#amazon-eventbridge) · [SNS & SQS](#amazon-sns) · [Step Functions](#aws-step-functions)
+**Topics:**
+1. [Lambda](#1-aws-lambda)
+2. [API Gateway](#2-api-gateway)
+3. [DynamoDB](#3-amazon-dynamodb)
+4. [EventBridge](#4-amazon-eventbridge)
+5. [SNS](#5-amazon-sns)
+6. [Step Functions](#6-aws-step-functions)
 
 ---
 
-# AWS Lambda
+# 1. AWS Lambda
 
 ## What is it?
 
@@ -28,18 +34,25 @@ Trigger → Lambda → Target Service → CloudWatch Logs
 | **Environment Variables** | Config values for the function |
 | **DLQ** | Stores failed async invocations |
 
-## Advantages & Limitations
+## Advantages
 
-**+** No servers, ms scaling, 200+ triggers  
-**−** 15-min timeout · Cold starts · 10 GB memory max
+- No servers, ms scaling, 200+ triggers
 
+## Limitations
+
+- 15-min timeout
+- Cold starts
+- 10 GB memory max
 ## Related AWS Services
 
-[Compute Lambda](../01-compute/README.md#aws-lambda) · [API Gateway](#api-gateway) · [CloudWatch](../08-monitoring/README.md#amazon-cloudwatch)
+- [Compute Lambda](../01-compute/README.md#1-aws-lambda)
+- [API Gateway](#2-api-gateway)
+- [CloudWatch](../08-monitoring/README.md#1-amazon-cloudwatch)
 
 ## Exam Tips
 
-Provisioned concurrency eliminates cold starts. Default concurrency 1000/account/region.
+- Provisioned concurrency eliminates cold starts
+- Default concurrency 1000/account/region
 
 ## One Line Definition
 
@@ -47,7 +60,7 @@ Provisioned concurrency eliminates cold starts. Default concurrency 1000/account
 
 ---
 
-# API Gateway
+# 2. API Gateway
 
 ## What is it?
 
@@ -80,7 +93,9 @@ Client → API Gateway → Lambda / HTTP Backend
 
 ## Related AWS Services
 
-[Lambda](#aws-lambda) · [Cognito](../15-identity/README.md#amazon-cognito) · [WAF](../07-security/README.md#aws-waf)
+- [Lambda](#1-aws-lambda)
+- [Cognito](../15-identity/README.md#3-amazon-cognito)
+- [WAF](../07-security/README.md#4-aws-waf)
 
 ## Exam Tips
 
@@ -92,7 +107,7 @@ Client → API Gateway → Lambda / HTTP Backend
 
 ---
 
-# Amazon DynamoDB
+# 3. Amazon DynamoDB
 
 ## What is it?
 
@@ -116,7 +131,9 @@ Lambda → DynamoDB Table → Streams → Lambda (CDC)
 
 ## Related AWS Services
 
-[Database DynamoDB](../03-database/README.md#amazon-dynamodb) · [Lambda](#aws-lambda) · [DAX](../03-database/README.md#amazon-dynamodb)
+- [Database DynamoDB](../03-database/README.md#3-amazon-dynamodb)
+- [Lambda](#1-aws-lambda)
+- [DAX](../03-database/README.md#3-amazon-dynamodb)
 
 ## Exam Tips
 
@@ -128,7 +145,7 @@ Design partition keys to avoid hot partitions. On-Demand for unpredictable traff
 
 ---
 
-# Amazon EventBridge
+# 4. Amazon EventBridge
 
 ## What is it?
 
@@ -146,7 +163,9 @@ Event bus routing events between AWS services, SaaS apps, and custom application
 
 ## Related AWS Services
 
-[Messaging EventBridge](../10-messaging/README.md#amazon-eventbridge) · [Lambda](#aws-lambda) · [Step Functions](#aws-step-functions)
+- [Messaging EventBridge](../10-messaging/README.md#4-amazon-eventbridge)
+- [Lambda](#1-aws-lambda)
+- [Step Functions](#6-aws-step-functions)
 
 ## One Line Definition
 
@@ -154,7 +173,7 @@ Event bus routing events between AWS services, SaaS apps, and custom application
 
 ---
 
-# Amazon SNS
+# 5. Amazon SNS
 
 ## What is it?
 
@@ -179,7 +198,8 @@ API → SNS Topic → SQS Queue → Lambda (process)
 
 ## Related AWS Services
 
-[Messaging SQS](../10-messaging/README.md#amazon-sqs) · [Messaging SNS](../10-messaging/README.md#amazon-sns)
+- [Messaging SQS](../10-messaging/README.md#1-amazon-sqs)
+- [Messaging SNS](../10-messaging/README.md#5-amazon-sns)
 
 ## One Line Definition
 
@@ -187,7 +207,7 @@ API → SNS Topic → SQS Queue → Lambda (process)
 
 ---
 
-# AWS Step Functions
+# 6. AWS Step Functions
 
 ## What is it?
 
@@ -221,7 +241,8 @@ Start → Task → Choice → Parallel → Catch/Retry → End
 
 ## Related AWS Services
 
-[Lambda](#aws-lambda) · [EventBridge](#amazon-eventbridge)
+- [Lambda](#1-aws-lambda)
+- [EventBridge](#4-amazon-eventbridge)
 
 ## Exam Tips
 

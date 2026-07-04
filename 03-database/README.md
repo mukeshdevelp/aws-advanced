@@ -2,11 +2,16 @@
 
 Managed relational, NoSQL, cache, and analytics databases.
 
-**Topics:** [RDS](#amazon-rds) · [Aurora](#amazon-aurora) · [DynamoDB](#amazon-dynamodb) · [ElastiCache](#amazon-elasticache) · [Redshift](#amazon-redshift)
+**Topics:**
+1. [RDS](#1-amazon-rds)
+2. [Aurora](#2-amazon-aurora)
+3. [DynamoDB](#3-amazon-dynamodb)
+4. [ElastiCache](#4-amazon-elasticache)
+5. [Redshift](#5-amazon-redshift)
 
 ---
 
-# Amazon RDS
+# 1. Amazon RDS
 
 ## What is it?
 
@@ -32,11 +37,14 @@ App → Primary (AZ-a) ──sync──→ Standby (AZ-b)  [Multi-AZ]
 | **Snapshot** | Manual backup; used to create new instances |
 | **PITR** | Point-in-time recovery from automated backups |
 
-## Advantages & Limitations
+## Advantages
 
-**+** Managed ops, backups, encryption  
-**−** Vertical scaling limits · Replica lag (async)
+- Managed ops, backups, encryption
 
+## Limitations
+
+- Vertical scaling limits
+- Replica lag (async)
 ## Comparison
 
 | RDS | DynamoDB |
@@ -45,15 +53,15 @@ App → Primary (AZ-a) ──sync──→ Standby (AZ-b)  [Multi-AZ]
 
 ## Related AWS Services
 
-[VPC](../04-networking/README.md#vpc) · [DMS](../11-migration/README.md#aws-database-migration-service-dms) · [CloudWatch](../08-monitoring/README.md#amazon-cloudwatch)
-
-## Interview Questions
-
-Multi-AZ vs Read Replica?
+- [VPC](../04-networking/README.md#1-vpc)
+- [DMS](../11-migration/README.md#2-aws-database-migration-service-dms)
+- [CloudWatch](../08-monitoring/README.md#1-amazon-cloudwatch)
 
 ## Exam Tips
 
-Multi-AZ = sync standby (HA). Read Replica = async (scale reads). Failover ~60-120s.
+- Multi-AZ = sync standby (HA)
+- Read Replica = async (scale reads)
+- Failover ~60-120s
 
 ## One Line Definition
 
@@ -61,7 +69,7 @@ Multi-AZ = sync standby (HA). Read Replica = async (scale reads). Failover ~60-1
 
 ---
 
-# Amazon Aurora
+# 2. Amazon Aurora
 
 ## What is it?
 
@@ -96,7 +104,7 @@ App → Writer + Readers → Shared Storage (6 copies, 3 AZs)
 
 ---
 
-# Amazon DynamoDB
+# 3. Amazon DynamoDB
 
 ## What is it?
 
@@ -120,18 +128,19 @@ App → Table (Partition Key) → GSI → Streams → Lambda
 | **Streams** | Change log for Lambda/event processing |
 | **DAX** | In-memory cache for microsecond reads |
 
-## Advantages & Limitations
+## Advantages
 
-**+** Serverless, ms latency, unlimited scale  
-**−** No joins · 400 KB item limit · Hot partition risk
+- Serverless, ms latency, unlimited scale
 
+## Limitations
+
+- No joins
+- 400 KB item limit
+- Hot partition risk
 ## Related AWS Services
 
-[Lambda](../01-compute/README.md#aws-lambda) · [Serverless](../14-serverless/README.md#amazon-dynamodb)
-
-## Interview Questions
-
-GSI vs LSI? On-Demand vs Provisioned?
+- [Lambda](../01-compute/README.md#1-aws-lambda)
+- [Serverless](../14-serverless/README.md#3-amazon-dynamodb)
 
 ## One Line Definition
 
@@ -139,7 +148,7 @@ GSI vs LSI? On-Demand vs Provisioned?
 
 ---
 
-# Amazon ElastiCache
+# 4. Amazon ElastiCache
 
 ## What is it?
 
@@ -169,7 +178,8 @@ App → ElastiCache → (miss) → RDS/DynamoDB
 
 ## Related AWS Services
 
-[RDS](#amazon-rds) · [DynamoDB](#amazon-dynamodb)
+- [RDS](#1-amazon-rds)
+- [DynamoDB](#3-amazon-dynamodb)
 
 ## One Line Definition
 
@@ -177,7 +187,7 @@ App → ElastiCache → (miss) → RDS/DynamoDB
 
 ---
 
-# Amazon Redshift
+# 5. Amazon Redshift
 
 ## What is it?
 

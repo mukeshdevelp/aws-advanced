@@ -2,11 +2,15 @@
 
 Distribute traffic across servers for high availability and scalability.
 
-**Topics:** [ALB](#application-load-balancer-alb) · [NLB](#network-load-balancer-nlb) · [GWLB](#gateway-load-balancer-gwlb) · [Classic LB](#classic-load-balancer)
+**Topics:**
+1. [Application Load Balancer](#1-application-load-balancer-alb)
+2. [Network Load Balancer](#2-network-load-balancer-nlb)
+3. [Gateway Load Balancer](#3-gateway-load-balancer-gwlb)
+4. [Classic Load Balancer](#4-classic-load-balancer)
 
 ---
 
-# Application Load Balancer (ALB)
+# 1. Application Load Balancer (ALB)
 
 ## What is it?
 
@@ -39,19 +43,28 @@ Users → ALB (Public Subnet) → Target Group → EC2/ECS/Lambda (multi-AZ)
 
 ## Workflow
 
-Create ALB → Create Target Group → Register Targets → Configure Listener Rules → Health Checks Pass → Traffic Flows
+1. Create ALB
+2. Create Target Group
+3. Register Targets
+4. Configure Listener Rules
+5. Health Checks Pass
+6. Traffic Flows
 
 ## Advantages
 
-Layer 7 routing, container-native, Lambda targets, redirect/fixed-response actions, slow start.
+- Layer 7 routing, container-native
+- Lambda targets, redirect/fixed-response actions, slow start
 
 ## Limitations
 
-Higher latency than NLB. Not for non-HTTP protocols (use NLB). Cross-zone load balancing optional (cost).
+- Higher latency than NLB
+- Not for non-HTTP protocols (use NLB)
+- Cross-zone load balancing optional (cost)
 
 ## Common Use Cases
 
-Web apps, microservices, API gateways, container services, blue/green deployments.
+- Web apps, microservices
+- API gateways, container services, blue/green deployments
 
 ## Comparison
 
@@ -63,15 +76,16 @@ Web apps, microservices, API gateways, container services, blue/green deployment
 
 ## Related AWS Services
 
-- [EC2](../01-compute/README.md#amazon-ec2) · [Auto Scaling](../01-compute/README.md#auto-scaling) · [ACM](../07-security/README.md#aws-certificate-manager-acm) · [WAF](../07-security/README.md#aws-waf)
-
-## Interview Questions
-
-1. ALB vs NLB? 2. How do health checks work? 3. What is sticky session?
+- [EC2](../01-compute/README.md#1-amazon-ec2)
+- [Auto Scaling](../01-compute/README.md#7-auto-scaling)
+- [ACM](../07-security/README.md#7-aws-security-hub)
+- [WAF](../07-security/README.md#4-aws-waf)
 
 ## Exam Tips
 
-ALB = Layer 7, path routing. Target types: EC2, IP, Lambda, ALB. Health check grace period for ASG.
+- ALB = Layer 7, path routing
+- Target types: EC2, IP, Lambda, ALB
+- Health check grace period for ASG
 
 ## One Line Definition
 
@@ -79,7 +93,7 @@ ALB = Layer 7, path routing. Target types: EC2, IP, Lambda, ALB. Health check gr
 
 ---
 
-# Network Load Balancer (NLB)
+# 2. Network Load Balancer (NLB)
 
 ## What is it?
 
@@ -135,11 +149,9 @@ Gaming servers, IoT, real-time streaming, VoIP, TLS passthrough, extreme traffic
 
 ## Related AWS Services
 
-- [Global Accelerator](../04-networking/README.md#aws-global-accelerator) · [EC2](../01-compute/README.md#amazon-ec2) · [Route 53](../06-dns-cdn/README.md#amazon-route-53)
-
-## Interview Questions
-
-1. When choose NLB over ALB? 2. Does NLB support static IPs? 3. NLB and Lambda targets?
+- [Global Accelerator](../04-networking/README.md#8-aws-global-accelerator)
+- [EC2](../01-compute/README.md#1-amazon-ec2)
+- [Route 53](../06-dns-cdn/README.md#1-amazon-route-53)
 
 ## Exam Tips
 
@@ -151,7 +163,7 @@ NLB = Layer 4, static IP, millions RPS. Use for non-HTTP or extreme performance 
 
 ---
 
-# Gateway Load Balancer (GWLB)
+# 3. Gateway Load Balancer (GWLB)
 
 ## What is it?
 
@@ -199,11 +211,9 @@ Centralized firewall inspection, IDS/IPS, network traffic analysis, compliance r
 
 ## Related AWS Services
 
-- [VPC](../04-networking/README.md#vpc) · [Transit Gateway](../04-networking/README.md#transit-gateway) · [WAF](../07-security/README.md#aws-waf)
-
-## Interview Questions
-
-1. What layer does GWLB operate at? 2. GWLB vs inline EC2 firewall? 3. What protocol does GWLB use?
+- [VPC](../04-networking/README.md#1-vpc)
+- [Transit Gateway](../04-networking/README.md#5-transit-gateway)
+- [WAF](../07-security/README.md#4-aws-waf)
 
 ## Exam Tips
 
@@ -215,7 +225,7 @@ GWLB = Layer 3, GENEVE protocol, port 6081. For third-party network appliances. 
 
 ---
 
-# Classic Load Balancer
+# 4. Classic Load Balancer
 
 ## What is it?
 
@@ -269,11 +279,9 @@ Legacy app maintenance only. New deployments should use ALB or NLB.
 
 ## Related AWS Services
 
-- [ALB](#application-load-balancer-alb) · [EC2](../01-compute/README.md#amazon-ec2) · [Auto Scaling](../01-compute/README.md#auto-scaling)
-
-## Interview Questions
-
-1. Why migrate from Classic to ALB? 2. Classic LB layer support? 3. Does Classic support path routing?
+- [ALB](#1-application-load-balancer-alb)
+- [EC2](../01-compute/README.md#1-amazon-ec2)
+- [Auto Scaling](../01-compute/README.md#7-auto-scaling)
 
 ## Exam Tips
 

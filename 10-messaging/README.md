@@ -2,11 +2,15 @@
 
 Event-driven architecture with queues, topics, and event buses.
 
-**Topics:** [SQS](#amazon-sqs) · [SNS](#amazon-sns) · [EventBridge](#amazon-eventbridge) · [MSK](#amazon-msk)
+**Topics:**
+1. [SQS](#1-amazon-sqs)
+2. [SNS](#2-amazon-sns)
+3. [EventBridge](#3-amazon-eventbridge)
+4. [MSK](#4-amazon-msk)
 
 ---
 
-# Amazon SQS
+# 1. Amazon SQS
 
 ## What is it?
 
@@ -32,13 +36,21 @@ Producer → SQS Queue → Consumer (EC2/Lambda)
 
 ## Workflow
 
-Send Message → Consumer Polls → Process → Delete (or DLQ after max receives)
+1. Send Message
+2. Consumer Polls
+3. Process
+4. Delete (or DLQ after max receives)
 
-## Advantages & Limitations
+## Advantages
 
-**+** Fully managed, auto-scale, decoupling, DLQ  
-**−** Pull model · 256 KB limit · Standard = best-effort ordering
+- Fully managed, auto-scale, decoupling
+- DLQ
 
+## Limitations
+
+- Pull model
+- 256 KB limit
+- Standard = best-effort ordering
 ## Comparison
 
 | SQS | SNS |
@@ -48,15 +60,14 @@ Send Message → Consumer Polls → Process → Delete (or DLQ after max receive
 
 ## Related AWS Services
 
-[Lambda](../01-compute/README.md#aws-lambda) · [SNS](#amazon-sns) · [EventBridge](#amazon-eventbridge)
-
-## Interview Questions
-
-Standard vs FIFO? Visibility timeout? DLQ purpose?
+- [Lambda](../01-compute/README.md#1-aws-lambda)
+- [SNS](#5-amazon-sns)
+- [EventBridge](#4-amazon-eventbridge)
 
 ## Exam Tips
 
-FIFO = .fifo suffix, exactly-once, ordering. Long polling reduces empty receives cost.
+- FIFO = .fifo suffix, exactly-once, ordering
+- Long polling reduces empty receives cost
 
 ## One Line Definition
 
@@ -64,7 +75,7 @@ FIFO = .fifo suffix, exactly-once, ordering. Long polling reduces empty receives
 
 ---
 
-# Amazon SNS
+# 2. Amazon SNS
 
 ## What is it?
 
@@ -90,18 +101,22 @@ Publisher → SNS Topic → SQS / Lambda / Email / HTTP
 
 Create Topic → Add Subscriptions → Publish → All Subscribers Receive Copy
 
-## Advantages & Limitations
+## Advantages
 
-**+** Fan-out, multi-protocol, message filtering  
-**−** No persistence · 256 KB limit
+- Fan-out, multi-protocol, message filtering
 
+## Limitations
+
+- No persistence
+- 256 KB limit
 ## Common Pattern
 
 SNS → multiple SQS queues → Lambda (fan-out decoupling)
 
 ## Related AWS Services
 
-[SQS](#amazon-sqs) · [CloudWatch](../08-monitoring/README.md#amazon-cloudwatch)
+- [SQS](#1-amazon-sqs)
+- [CloudWatch](../08-monitoring/README.md#1-amazon-cloudwatch)
 
 ## Exam Tips
 
@@ -113,7 +128,7 @@ SNS = 1→many push. SQS = 1→1 pull. Classic pattern: SNS fans out to SQS queu
 
 ---
 
-# Amazon EventBridge
+# 3. Amazon EventBridge
 
 ## What is it?
 
@@ -145,11 +160,8 @@ Event Source → EventBridge Bus → Rules (filter) → Lambda/SQS/SNS/Step Func
 
 ## Related AWS Services
 
-[Lambda](../01-compute/README.md#aws-lambda) · [Step Functions](../14-serverless/README.md#aws-step-functions)
-
-## Interview Questions
-
-EventBridge vs CloudWatch Events? vs SNS?
+- [Lambda](../01-compute/README.md#1-aws-lambda)
+- [Step Functions](../14-serverless/README.md#6-aws-step-functions)
 
 ## Exam Tips
 
@@ -161,7 +173,7 @@ EventBridge = successor to CloudWatch Events. Archive + replay. Content-based ev
 
 ---
 
-# Amazon MSK
+# 4. Amazon MSK
 
 ## What is it?
 
@@ -195,7 +207,8 @@ Producers → MSK Brokers → Topics/Partitions → Consumers
 
 ## Related AWS Services
 
-[Lambda](../01-compute/README.md#aws-lambda) · [S3](../02-storage/README.md#amazon-s3)
+- [Lambda](../01-compute/README.md#1-aws-lambda)
+- [S3](../02-storage/README.md#1-amazon-s3)
 
 ## Exam Tips
 

@@ -2,11 +2,18 @@
 
 Identity, encryption, and threat detection — top interview topic.
 
-**Topics:** [IAM](#iam) · [KMS](#aws-kms) · [Secrets Manager](#aws-secrets-manager) · [WAF & Shield](#aws-waf) · [GuardDuty](#amazon-guardduty) · [Inspector & Macie](#amazon-inspector) · [Security Hub & ACM](#aws-security-hub)
+**Topics:**
+1. [IAM](#1-iam)
+2. [KMS](#2-aws-kms)
+3. [Secrets Manager](#3-aws-secrets-manager)
+4. [WAF](#4-aws-waf)
+5. [GuardDuty](#5-amazon-guardduty)
+6. [Inspector](#6-amazon-inspector)
+7. [Security Hub](#7-aws-security-hub)
 
 ---
 
-# IAM
+# 1. IAM
 
 ## What is it?
 
@@ -30,11 +37,15 @@ User/Role → Policy Evaluation (Deny > Allow > default Deny) → AWS Resource
 | **Permission Boundary** | Max permissions a user/role can receive |
 | **SCP** | Org-level guardrail (via Organizations) |
 
-## Advantages & Limitations
+## Advantages
 
-**+** Granular, free, roles for services (no hardcoded keys)  
-**−** Policy complexity · Global service · 5000 users/account
+- Granular, free, roles for services (no hardcoded keys)
 
+## Limitations
+
+- Policy complexity
+- Global service
+- 5000 users/account
 ## Comparison
 
 | IAM User | IAM Role |
@@ -44,15 +55,15 @@ User/Role → Policy Evaluation (Deny > Allow > default Deny) → AWS Resource
 
 ## Related AWS Services
 
-[Identity Center](../15-identity/README.md#iam-identity-center) · [CloudTrail](../08-monitoring/README.md#aws-cloudtrail) · [Organizations](../12-governance/README.md#aws-organizations)
-
-## Interview Questions
-
-Least privilege? EC2 instance roles? Policy evaluation order?
+- [Identity Center](../15-identity/README.md#2-iam-identity-center)
+- [CloudTrail](../08-monitoring/README.md#2-aws-cloudtrail)
+- [Organizations](../12-governance/README.md#1-aws-organizations)
 
 ## Exam Tips
 
-Roles for services. Explicit Deny wins. IAM is global, not regional.
+- Roles for services
+- Explicit Deny wins
+- IAM is global, not regional
 
 ## One Line Definition
 
@@ -60,7 +71,7 @@ Roles for services. Explicit Deny wins. IAM is global, not regional.
 
 ---
 
-# AWS KMS
+# 2. AWS KMS
 
 ## What is it?
 
@@ -84,7 +95,8 @@ Service/App → KMS API → CMK → Encrypt/Decrypt → CloudTrail audit
 
 ## Related AWS Services
 
-[S3](../02-storage/README.md#amazon-s3) · [Secrets Manager](#aws-secrets-manager)
+- [S3](../02-storage/README.md#1-amazon-s3)
+- [Secrets Manager](#3-aws-secrets-manager)
 
 ## Exam Tips
 
@@ -96,7 +108,7 @@ Envelope encryption: data key encrypts data, CMK encrypts data key. CMK = $1/mon
 
 ---
 
-# AWS Secrets Manager
+# 3. AWS Secrets Manager
 
 ## What is it?
 
@@ -121,7 +133,9 @@ Store and **automatically rotate** secrets (DB creds, API keys). Encrypted with 
 
 ## Related AWS Services
 
-[KMS](#aws-kms) · [RDS](../03-database/README.md#amazon-rds) · [Systems Manager](../09-devops/README.md#aws-systems-manager)
+- [KMS](#2-aws-kms)
+- [RDS](../03-database/README.md#1-amazon-rds)
+- [Systems Manager](../09-devops/README.md#6-aws-systems-manager)
 
 ## One Line Definition
 
@@ -129,7 +143,7 @@ Store and **automatically rotate** secrets (DB creds, API keys). Encrypted with 
 
 ---
 
-# AWS WAF
+# 4. AWS WAF
 
 ## What is it?
 
@@ -160,7 +174,8 @@ User → Shield → WAF → ALB/CloudFront → App
 
 ## Related AWS Services
 
-[ALB](../05-load-balancing/README.md) · [CloudFront](../06-dns-cdn/README.md#amazon-cloudfront)
+- [ALB](../05-load-balancing/README.md)
+- [CloudFront](../06-dns-cdn/README.md#2-amazon-cloudfront)
 
 ## Exam Tips
 
@@ -172,7 +187,7 @@ WAF attaches to ALB, CloudFront, API Gateway. Shield Standard = automatic, free.
 
 ---
 
-# Amazon GuardDuty
+# 5. Amazon GuardDuty
 
 ## What is it?
 
@@ -202,7 +217,8 @@ Logs → GuardDuty ML → Findings → SNS/EventBridge → Security Hub
 
 ## Related AWS Services
 
-[Security Hub](#aws-security-hub) · [CloudTrail](../08-monitoring/README.md#aws-cloudtrail)
+- [Security Hub](#7-aws-security-hub)
+- [CloudTrail](../08-monitoring/README.md#2-aws-cloudtrail)
 
 ## One Line Definition
 
@@ -210,7 +226,7 @@ Logs → GuardDuty ML → Findings → SNS/EventBridge → Security Hub
 
 ---
 
-# Amazon Inspector
+# 6. Amazon Inspector
 
 ## What is it?
 
@@ -234,7 +250,8 @@ Logs → GuardDuty ML → Findings → SNS/EventBridge → Security Hub
 
 ## Related AWS Services
 
-[ECR](../13-containers/README.md#amazon-ecr) · [S3](../02-storage/README.md#amazon-s3)
+- [ECR](../13-containers/README.md#2-amazon-ecr)
+- [S3](../02-storage/README.md#1-amazon-s3)
 
 ## One Line Definition
 
@@ -242,7 +259,7 @@ Logs → GuardDuty ML → Findings → SNS/EventBridge → Security Hub
 
 ---
 
-# AWS Security Hub
+# 7. AWS Security Hub
 
 ## What is it?
 
@@ -266,7 +283,8 @@ ACM → DNS Validation → Attach to ALB/CloudFront → HTTPS
 
 ## Related AWS Services
 
-[GuardDuty](#amazon-guardduty) · [CloudFront](../06-dns-cdn/README.md#amazon-cloudfront)
+- [GuardDuty](#5-amazon-guardduty)
+- [CloudFront](../06-dns-cdn/README.md#2-amazon-cloudfront)
 
 ## Exam Tips
 

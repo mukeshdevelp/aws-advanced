@@ -2,11 +2,17 @@
 
 Multi-account management, compliance, cost control, and resource sharing.
 
-**Topics:** [Organizations](#aws-organizations) · [Control Tower](#aws-control-tower) · [RAM](#aws-resource-access-manager-ram) · [SCPs](#service-control-policies-scp) · [Budgets](#aws-budgets) · [Cost Explorer](#aws-cost-explorer)
+**Topics:**
+1. [Organizations](#1-aws-organizations)
+2. [Control Tower](#2-aws-control-tower)
+3. [Resource Access Manager](#3-aws-resource-access-manager-ram)
+4. [Service Control Policies](#4-service-control-policies-scp)
+5. [Budgets](#5-aws-budgets)
+6. [Cost Explorer](#6-aws-cost-explorer)
 
 ---
 
-# AWS Organizations
+# 1. AWS Organizations
 
 ## What is it?
 
@@ -31,15 +37,14 @@ Management Account → Root → OUs (Dev, Prod, Security) → Member Accounts
 
 ## Related AWS Services
 
-[Control Tower](#aws-control-tower) · [SCPs](#service-control-policies-scp) · [CloudTrail](../08-monitoring/README.md#aws-cloudtrail)
-
-## Interview Questions
-
-Management vs member account? SCP purpose?
+- [Control Tower](#2-aws-control-tower)
+- [SCPs](#4-service-control-policies-scp)
+- [CloudTrail](../08-monitoring/README.md#2-aws-cloudtrail)
 
 ## Exam Tips
 
-SCP = guardrail (what accounts CAN'T do). Management account not affected by SCPs.
+- SCP = guardrail (what accounts CAN'T do)
+- Management account not affected by SCPs
 
 ## One Line Definition
 
@@ -47,7 +52,7 @@ SCP = guardrail (what accounts CAN'T do). Management account not affected by SCP
 
 ---
 
-# AWS Control Tower
+# 2. AWS Control Tower
 
 ## What is it?
 
@@ -71,7 +76,8 @@ Control Tower → Landing Zone → OUs + Guardrails → Account Factory → New 
 
 ## Related AWS Services
 
-[Organizations](#aws-organizations) · [Config](../08-monitoring/README.md#aws-config)
+- [Organizations](#1-aws-organizations)
+- [Config](../08-monitoring/README.md#3-aws-config)
 
 ## Exam Tips
 
@@ -83,7 +89,7 @@ Control Tower builds on Organizations. Guardrails = SCPs + Config rules.
 
 ---
 
-# AWS Resource Access Manager (RAM)
+# 3. AWS Resource Access Manager (RAM)
 
 ## What is it?
 
@@ -108,7 +114,9 @@ Shared Subnet / TGW / License
 
 ## Related AWS Services
 
-[Organizations](#aws-organizations) · [VPC](../04-networking/README.md#vpc) · [Transit Gateway](../04-networking/README.md#transit-gateway)
+- [Organizations](#1-aws-organizations)
+- [VPC](../04-networking/README.md#1-vpc)
+- [Transit Gateway](../04-networking/README.md#5-transit-gateway)
 
 ## Exam Tips
 
@@ -120,7 +128,7 @@ Shared VPC = central account owns VPC, others use subnets. Common enterprise pat
 
 ---
 
-# Service Control Policies (SCP)
+# 4. Service Control Policies (SCP)
 
 ## What is it?
 
@@ -144,11 +152,15 @@ Effective Permission = IAM ∩ SCP
 
 ## Examples
 
-Deny leaving org · Restrict regions · Prevent disabling CloudTrail · Block expensive services in sandbox
+- Deny leaving org
+- Restrict regions
+- Prevent disabling CloudTrail
+- Block expensive services in sandbox
 
 ## Related AWS Services
 
-[Organizations](#aws-organizations) · [IAM](../15-identity/README.md#iam)
+- [Organizations](#1-aws-organizations)
+- [IAM](../15-identity/README.md#1-iam)
 
 ## Exam Tips
 
@@ -160,7 +172,7 @@ SCP never grants permissions. Explicit Deny in SCP overrides IAM Allow. Max 5 SC
 
 ---
 
-# AWS Budgets
+# 5. AWS Budgets
 
 ## What is it?
 
@@ -183,7 +195,8 @@ Costs → Budget Evaluation → Threshold Breached → SNS Alert → Optional Ac
 
 ## Related AWS Services
 
-[Cost Explorer](#aws-cost-explorer) · [SNS](../10-messaging/README.md#amazon-sns)
+- [Cost Explorer](#6-aws-cost-explorer)
+- [SNS](../10-messaging/README.md#5-amazon-sns)
 
 ## Exam Tips
 
@@ -195,7 +208,7 @@ First 2 budgets free. Budget actions can apply IAM policy or run SSM automation.
 
 ---
 
-# AWS Cost Explorer
+# 6. AWS Cost Explorer
 
 ## What is it?
 
@@ -226,7 +239,8 @@ Billing Data → Cost Explorer → Filters/Reports → Optimization Recommendati
 
 ## Related AWS Services
 
-[Budgets](#aws-budgets) · [Trusted Advisor](../08-monitoring/README.md#aws-trusted-advisor)
+- [Budgets](#5-aws-budgets)
+- [Trusted Advisor](../08-monitoring/README.md#6-aws-trusted-advisor)
 
 ## Exam Tips
 

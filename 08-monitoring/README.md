@@ -2,11 +2,18 @@
 
 Metrics, logs, audit trails, compliance, and tracing.
 
-**Topics:** [CloudWatch](#amazon-cloudwatch) · [CloudTrail](#aws-cloudtrail) · [Config](#aws-config) · [X-Ray](#aws-x-ray) · [VPC Flow Logs](#vpc-flow-logs) · [Trusted Advisor](#aws-trusted-advisor) · [Health Dashboard](#aws-health-dashboard)
+**Topics:**
+1. [CloudWatch](#1-amazon-cloudwatch)
+2. [CloudTrail](#2-aws-cloudtrail)
+3. [Config](#3-aws-config)
+4. [X-Ray](#4-aws-x-ray)
+5. [VPC Flow Logs](#5-vpc-flow-logs)
+6. [Trusted Advisor](#6-aws-trusted-advisor)
+7. [Health Dashboard](#7-aws-health-dashboard)
 
 ---
 
-# Amazon CloudWatch
+# 1. Amazon CloudWatch
 
 ## What is it?
 
@@ -29,11 +36,15 @@ Resources → Metrics/Logs → CloudWatch → Alarms → SNS/Auto Scaling/Lambda
 | **Insights** | SQL-like query language for logs |
 | **Synthetics** | Canaries for endpoint monitoring |
 
-## Advantages & Limitations
+## Advantages
 
-**+** Centralized monitoring, custom metrics, log analytics  
-**−** Log storage costs · EC2 memory needs agent · 1-min default granularity
+- Centralized monitoring, custom metrics, log analytics
 
+## Limitations
+
+- Log storage costs
+- EC2 memory needs agent
+- 1-min default granularity
 ## Comparison
 
 | CloudWatch | CloudTrail |
@@ -43,15 +54,14 @@ Resources → Metrics/Logs → CloudWatch → Alarms → SNS/Auto Scaling/Lambda
 
 ## Related AWS Services
 
-[Auto Scaling](../01-compute/README.md#auto-scaling) · [SNS](../10-messaging/README.md#amazon-sns) · [X-Ray](#aws-x-ray)
-
-## Interview Questions
-
-CloudWatch vs CloudTrail? Alarm trigger Auto Scaling?
+- [Auto Scaling](../01-compute/README.md#7-auto-scaling)
+- [SNS](../10-messaging/README.md#5-amazon-sns)
+- [X-Ray](#4-aws-x-ray)
 
 ## Exam Tips
 
-EC2 default: CPU, network, disk — NOT memory (needs agent). Alarm states: OK, ALARM, INSUFFICIENT_DATA.
+- EC2 default: CPU, network, disk — NOT memory (needs agent)
+- Alarm states: OK, ALARM, INSUFFICIENT_DATA
 
 ## One Line Definition
 
@@ -59,7 +69,7 @@ EC2 default: CPU, network, disk — NOT memory (needs agent). Alarm states: OK, 
 
 ---
 
-# AWS CloudTrail
+# 2. AWS CloudTrail
 
 ## What is it?
 
@@ -85,7 +95,8 @@ API Call → CloudTrail → S3 Log File → Athena/CloudWatch analysis
 
 ## Related AWS Services
 
-[S3](../02-storage/README.md#amazon-s3) · [GuardDuty](../07-security/README.md#amazon-guardduty)
+- [S3](../02-storage/README.md#1-amazon-s3)
+- [GuardDuty](../07-security/README.md#5-amazon-guardduty)
 
 ## Exam Tips
 
@@ -97,7 +108,7 @@ CloudTrail = WHO (API audit). CloudWatch = WHAT performance. Enable in all regio
 
 ---
 
-# AWS Config
+# 3. AWS Config
 
 ## What is it?
 
@@ -122,11 +133,8 @@ Resources → Config Recorder → Snapshots → S3
 
 ## Related AWS Services
 
-[Organizations](../12-governance/README.md#aws-organizations) · [CloudTrail](#aws-cloudtrail)
-
-## Interview Questions
-
-Config vs CloudTrail?
+- [Organizations](../12-governance/README.md#1-aws-organizations)
+- [CloudTrail](#2-aws-cloudtrail)
 
 ## Exam Tips
 
@@ -138,7 +146,7 @@ Config = resource state over time. CloudTrail = API calls. Both needed for gover
 
 ---
 
-# AWS X-Ray
+# 4. AWS X-Ray
 
 ## What is it?
 
@@ -162,7 +170,8 @@ API GW → Lambda → DynamoDB (trace segments) → X-Ray Service Map
 
 ## Related AWS Services
 
-[Lambda](../01-compute/README.md#aws-lambda) · [API Gateway](../14-serverless/README.md#api-gateway)
+- [Lambda](../01-compute/README.md#1-aws-lambda)
+- [API Gateway](../14-serverless/README.md#2-api-gateway)
 
 ## Exam Tips
 
@@ -174,7 +183,7 @@ X-Ray = tracing. CloudWatch = metrics/logs. Enable via SDK or Lambda active trac
 
 ---
 
-# VPC Flow Logs
+# 5. VPC Flow Logs
 
 ## What is it?
 
@@ -197,7 +206,8 @@ ENI Traffic → Flow Log → CloudWatch/S3 → GuardDuty/Athena
 
 ## Related AWS Services
 
-[VPC](../04-networking/README.md#vpc) · [GuardDuty](../07-security/README.md#amazon-guardduty)
+- [VPC](../04-networking/README.md#1-vpc)
+- [GuardDuty](../07-security/README.md#5-amazon-guardduty)
 
 ## Exam Tips
 
@@ -209,7 +219,7 @@ Flow logs = network metadata. Not real-time packet capture. GuardDuty uses flow 
 
 ---
 
-# AWS Trusted Advisor
+# 6. AWS Trusted Advisor
 
 ## What is it?
 
@@ -227,7 +237,8 @@ Best-practice checks across **Cost**, **Performance**, **Security**, **Fault Tol
 
 ## Related AWS Services
 
-[Cost Explorer](../12-governance/README.md#aws-cost-explorer) · [Security Hub](../07-security/README.md#aws-security-hub)
+- [Cost Explorer](../12-governance/README.md#6-aws-cost-explorer)
+- [Security Hub](../07-security/README.md#7-aws-security-hub)
 
 ## Exam Tips
 
@@ -239,7 +250,7 @@ Full checks need Business/Enterprise Support. 5 categories of recommendations.
 
 ---
 
-# AWS Health Dashboard
+# 7. AWS Health Dashboard
 
 ## What is it?
 
@@ -262,7 +273,8 @@ AWS Event → Health Dashboard → EventBridge/SNS → Your Response
 
 ## Related AWS Services
 
-[CloudWatch](#amazon-cloudwatch) · [EventBridge](../10-messaging/README.md#amazon-eventbridge)
+- [CloudWatch](#1-amazon-cloudwatch)
+- [EventBridge](../10-messaging/README.md#4-amazon-eventbridge)
 
 ## One Line Definition
 

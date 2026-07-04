@@ -2,11 +2,18 @@
 
 Core services used to run applications on AWS.
 
-**Topics:** [EC2](#amazon-ec2) · [Lambda](#aws-lambda) · [Beanstalk](#aws-elastic-beanstalk) · [Fargate](#aws-fargate) · [ECS](#amazon-ecs) · [EKS](#amazon-eks) · [Auto Scaling](#auto-scaling)
+**Topics:**
+1. [EC2](#1-amazon-ec2)
+2. [Lambda](#2-aws-lambda)
+3. [Elastic Beanstalk](#3-aws-elastic-beanstalk)
+4. [Fargate](#4-aws-fargate)
+5. [ECS](#5-amazon-ecs)
+6. [EKS](#6-amazon-eks)
+7. [Auto Scaling](#7-auto-scaling)
 
 ---
 
-# Amazon EC2
+# 1. Amazon EC2
 
 ## What is it?
 
@@ -42,7 +49,11 @@ Users → ALB → EC2 (AZ-a) + EC2 (AZ-b) → EBS Volumes
 
 ## Related AWS Services
 
-[Auto Scaling](#auto-scaling) · [ALB](../05-load-balancing/README.md#application-load-balancer-alb) · [CloudWatch](../08-monitoring/README.md#amazon-cloudwatch) · [IAM](../15-identity/README.md#iam) · [EBS](../02-storage/README.md#amazon-ebs)
+- [Auto Scaling](#7-auto-scaling)
+- [ALB](../05-load-balancing/README.md#1-application-load-balancer-alb)
+- [CloudWatch](../08-monitoring/README.md#1-amazon-cloudwatch)
+- [IAM](../15-identity/README.md#1-iam)
+- [EBS](../02-storage/README.md#2-amazon-ebs)
 
 ## One Line Definition
 
@@ -50,7 +61,7 @@ Users → ALB → EC2 (AZ-a) + EC2 (AZ-b) → EBS Volumes
 
 ---
 
-# AWS Lambda
+# 2. AWS Lambda
 
 ## What is it?
 
@@ -76,7 +87,9 @@ Event → Lambda Function → DynamoDB/S3/SNS → CloudWatch Logs
 
 ## Related AWS Services
 
-[API Gateway](../14-serverless/README.md#api-gateway) · [DynamoDB](../03-database/README.md#amazon-dynamodb) · [SQS](../10-messaging/README.md#amazon-sqs)
+- [API Gateway](../14-serverless/README.md#2-api-gateway)
+- [DynamoDB](../03-database/README.md#3-amazon-dynamodb)
+- [SQS](../10-messaging/README.md#1-amazon-sqs)
 
 ## One Line Definition
 
@@ -84,7 +97,7 @@ Event → Lambda Function → DynamoDB/S3/SNS → CloudWatch Logs
 
 ---
 
-# AWS Elastic Beanstalk
+# 3. AWS Elastic Beanstalk
 
 ## What is it?
 
@@ -109,7 +122,9 @@ Developer → Upload App → Beanstalk → EC2 + ALB + Auto Scaling
 
 ## Related AWS Services
 
-[EC2](#amazon-ec2) · [ALB](../05-load-balancing/README.md) · [RDS](../03-database/README.md#amazon-rds)
+- [EC2](#1-amazon-ec2)
+- [ALB](../05-load-balancing/README.md)
+- [RDS](../03-database/README.md#1-amazon-rds)
 
 ## One Line Definition
 
@@ -117,7 +132,7 @@ Developer → Upload App → Beanstalk → EC2 + ALB + Auto Scaling
 
 ---
 
-# AWS Fargate
+# 4. AWS Fargate
 
 ## What is it?
 
@@ -141,7 +156,9 @@ ECR Image → Fargate Task → ALB → Users
 
 ## Related AWS Services
 
-[ECS](#amazon-ecs) · [EKS](#amazon-eks) · [ECR](../13-containers/README.md#amazon-ecr)
+- [ECS](#3-amazon-ecs)
+- [EKS](#4-amazon-eks)
+- [ECR](../13-containers/README.md#2-amazon-ecr)
 
 ## One Line Definition
 
@@ -149,7 +166,7 @@ ECR Image → Fargate Task → ALB → Users
 
 ---
 
-# Amazon ECS
+# 5. Amazon ECS
 
 ## What is it?
 
@@ -173,7 +190,9 @@ ECR → Task Definition → ECS Service → Tasks → ALB
 
 ## Related AWS Services
 
-[ECR](../13-containers/README.md#amazon-ecr) · [Fargate](#aws-fargate) · [ALB](../05-load-balancing/README.md)
+- [ECR](../13-containers/README.md#2-amazon-ecr)
+- [Fargate](#5-aws-fargate)
+- [ALB](../05-load-balancing/README.md)
 
 ## One Line Definition
 
@@ -181,7 +200,7 @@ ECR → Task Definition → ECS Service → Tasks → ALB
 
 ---
 
-# Amazon EKS
+# 6. Amazon EKS
 
 ## What is it?
 
@@ -205,7 +224,9 @@ kubectl → EKS Control Plane → Worker Nodes → Pods → ALB Ingress
 
 ## Related AWS Services
 
-[ECR](../13-containers/README.md#amazon-ecr) · [Fargate](#aws-fargate) · [VPC](../04-networking/README.md#vpc)
+- [ECR](../13-containers/README.md#2-amazon-ecr)
+- [Fargate](#5-aws-fargate)
+- [VPC](../04-networking/README.md#1-vpc)
 
 ## One Line Definition
 
@@ -213,7 +234,7 @@ kubectl → EKS Control Plane → Worker Nodes → Pods → ALB Ingress
 
 ---
 
-# Auto Scaling
+# 7. Auto Scaling
 
 ## What is it?
 
@@ -237,7 +258,9 @@ CloudWatch Alarm → Scaling Policy → ASG → Launch/Terminate EC2
 
 ## Related AWS Services
 
-[EC2](#amazon-ec2) · [ALB](../05-load-balancing/README.md) · [CloudWatch](../08-monitoring/README.md#amazon-cloudwatch)
+- [EC2](#1-amazon-ec2)
+- [ALB](../05-load-balancing/README.md)
+- [CloudWatch](../08-monitoring/README.md#1-amazon-cloudwatch)
 
 ## One Line Definition
 

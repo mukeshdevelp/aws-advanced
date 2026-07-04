@@ -2,11 +2,16 @@
 
 Object, block, and file storage on AWS.
 
-**Topics:** [S3](#amazon-s3) · [EBS](#amazon-ebs) · [EFS](#amazon-efs) · [FSx](#amazon-fsx) · [Storage Gateway](#aws-storage-gateway)
+**Topics:**
+1. [S3](#1-amazon-s3)
+2. [EBS](#2-amazon-ebs)
+3. [EFS](#3-amazon-efs)
+4. [FSx](#4-amazon-fsx)
+5. [Storage Gateway](#5-aws-storage-gateway)
 
 ---
 
-# Amazon S3
+# 1. Amazon S3
 
 ## What is it?
 
@@ -14,7 +19,12 @@ Infinitely scalable object storage with 11 9s durability. Store files as objects
 
 ## Why do we use it?
 
-Static sites · Backups · Data lakes · Lifecycle policies · Versioning · Cross-Region Replication
+- Static sites
+- Backups
+- Data lakes
+- Lifecycle policies
+- Versioning
+- Cross-Region Replication
 
 ## Architecture
 
@@ -34,11 +44,14 @@ App → S3 Bucket → Objects → Storage Classes → Glacier
 | **CRR** | Replicate objects to another Region |
 | **Presigned URL** | Temporary authenticated download/upload URL |
 
-## Advantages & Limitations
+## Advantages
 
-**+** Unlimited, durable, event triggers  
-**−** Not a file system · Object store only
+- Unlimited, durable, event triggers
 
+## Limitations
+
+- Not a file system
+- Object store only
 ## Comparison
 
 | S3 | EBS |
@@ -47,11 +60,9 @@ App → S3 Bucket → Objects → Storage Classes → Glacier
 
 ## Related AWS Services
 
-[CloudFront](../06-dns-cdn/README.md#amazon-cloudfront) · [Lambda](../01-compute/README.md#aws-lambda) · [IAM](../15-identity/README.md#iam)
-
-## Interview Questions
-
-Storage classes? Bucket policy vs ACL?
+- [CloudFront](../06-dns-cdn/README.md#2-amazon-cloudfront)
+- [Lambda](../01-compute/README.md#1-aws-lambda)
+- [IAM](../15-identity/README.md#1-iam)
 
 ## One Line Definition
 
@@ -59,7 +70,7 @@ Storage classes? Bucket policy vs ACL?
 
 ---
 
-# Amazon EBS
+# 2. Amazon EBS
 
 ## What is it?
 
@@ -89,7 +100,8 @@ EC2 ←→ EBS Volume (same AZ) → Snapshot → S3 (incremental)
 
 ## Related AWS Services
 
-[EC2](../01-compute/README.md#amazon-ec2) · [KMS](../07-security/README.md#aws-kms)
+- [EC2](../01-compute/README.md#1-amazon-ec2)
+- [KMS](../07-security/README.md#2-aws-kms)
 
 ## One Line Definition
 
@@ -97,7 +109,7 @@ EC2 ←→ EBS Volume (same AZ) → Snapshot → S3 (incremental)
 
 ---
 
-# Amazon EFS
+# 3. Amazon EFS
 
 ## What is it?
 
@@ -122,7 +134,9 @@ EC2-b ──┼──→ Mount Target (per AZ) → EFS File System
 
 ## Related AWS Services
 
-[EC2](../01-compute/README.md#amazon-ec2) · [ECS](../13-containers/README.md#amazon-ecs) · [VPC](../04-networking/README.md#vpc)
+- [EC2](../01-compute/README.md#1-amazon-ec2)
+- [ECS](../13-containers/README.md#3-amazon-ecs)
+- [VPC](../04-networking/README.md#1-vpc)
 
 ## One Line Definition
 
@@ -130,7 +144,7 @@ EC2-b ──┼──→ Mount Target (per AZ) → EFS File System
 
 ---
 
-# Amazon FSx
+# 4. Amazon FSx
 
 ## What is it?
 
@@ -154,7 +168,8 @@ Managed file systems: Windows (SMB), Lustre (HPC), NetApp ONTAP, OpenZFS.
 
 ## Related AWS Services
 
-[VPC](../04-networking/README.md#vpc) · [Directory Service](../15-identity/README.md#aws-directory-service)
+- [VPC](../04-networking/README.md#1-vpc)
+- [Directory Service](../15-identity/README.md#4-aws-directory-service)
 
 ## One Line Definition
 
@@ -162,7 +177,7 @@ Managed file systems: Windows (SMB), Lustre (HPC), NetApp ONTAP, OpenZFS.
 
 ---
 
-# AWS Storage Gateway
+# 5. AWS Storage Gateway
 
 ## What is it?
 
@@ -180,7 +195,8 @@ Hybrid storage bridge connecting on-premises to AWS (S3, EBS snapshots, Glacier)
 
 ## Related AWS Services
 
-[S3](#amazon-s3) · [Snowball](../11-migration/README.md#aws-snowball)
+- [S3](#1-amazon-s3)
+- [Snowball](../11-migration/README.md#4-aws-snowball)
 
 ## One Line Definition
 

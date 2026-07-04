@@ -2,11 +2,17 @@
 
 CI/CD automation and Infrastructure as Code.
 
-**Topics:** [CodeCommit](#aws-codecommit) · [CodeBuild](#aws-codebuild) · [CodeDeploy](#aws-codedeploy) · [CodePipeline](#aws-codepipeline) · [CloudFormation](#aws-cloudformation) · [Systems Manager](#aws-systems-manager)
+**Topics:**
+1. [CodeCommit](#1-aws-codecommit)
+2. [CodeBuild](#2-aws-codebuild)
+3. [CodeDeploy](#3-aws-codedeploy)
+4. [CodePipeline](#4-aws-codepipeline)
+5. [CloudFormation](#5-aws-cloudformation)
+6. [Systems Manager](#6-aws-systems-manager)
 
 ---
 
-# AWS CodeCommit
+# 1. AWS CodeCommit
 
 ## What is it?
 
@@ -29,11 +35,13 @@ Developer → git push → CodeCommit → Triggers CodePipeline
 
 ## Related AWS Services
 
-[CodePipeline](#aws-codepipeline) · [CodeBuild](#aws-codebuild)
+- [CodePipeline](#4-aws-codepipeline)
+- [CodeBuild](#2-aws-codebuild)
 
 ## Exam Tips
 
-Often replaced by GitHub/GitLab as CodePipeline source. Know it exists for exams.
+- Often replaced by GitHub/GitLab as CodePipeline source
+- Know it exists for exams
 
 ## One Line Definition
 
@@ -41,7 +49,7 @@ Often replaced by GitHub/GitLab as CodePipeline source. Know it exists for exams
 
 ---
 
-# AWS CodeBuild
+# 2. AWS CodeBuild
 
 ## What is it?
 
@@ -65,11 +73,15 @@ Source → CodeBuild → buildspec.yml → Artifact (S3/ECR)
 
 ## Workflow
 
-Pipeline Triggers → Read Source → Run buildspec phases → Output Artifact
+1. Pipeline Triggers
+2. Read Source
+3. Run buildspec phases
+4. Output Artifact
 
 ## Related AWS Services
 
-[CodePipeline](#aws-codepipeline) · [ECR](../13-containers/README.md#amazon-ecr)
+- [CodePipeline](#4-aws-codepipeline)
+- [ECR](../13-containers/README.md#2-amazon-ecr)
 
 ## Exam Tips
 
@@ -81,7 +93,7 @@ buildspec.yml phases: install, pre_build, build, post_build. Artifacts → S3 or
 
 ---
 
-# AWS CodeDeploy
+# 3. AWS CodeDeploy
 
 ## What is it?
 
@@ -113,7 +125,9 @@ Artifact → CodeDeploy → Deployment Group → EC2/Lambda/ECS
 
 ## Related AWS Services
 
-[EC2](../01-compute/README.md#amazon-ec2) · [ECS](../13-containers/README.md#amazon-ecs) · [ALB](../05-load-balancing/README.md)
+- [EC2](../01-compute/README.md#1-amazon-ec2)
+- [ECS](../13-containers/README.md#3-amazon-ecs)
+- [ALB](../05-load-balancing/README.md)
 
 ## Exam Tips
 
@@ -125,7 +139,7 @@ Blue/green = new instances + traffic switch. Requires agent on EC2/on-prem.
 
 ---
 
-# AWS CodePipeline
+# 4. AWS CodePipeline
 
 ## What is it?
 
@@ -150,11 +164,9 @@ Source → Build → Test → Deploy Staging → Approval → Deploy Production
 
 ## Related AWS Services
 
-[CodeBuild](#aws-codebuild) · [CodeDeploy](#aws-codedeploy) · [CloudFormation](#aws-cloudformation)
-
-## Interview Questions
-
-Pipeline stages? Source options?
+- [CodeBuild](#2-aws-codebuild)
+- [CodeDeploy](#3-aws-codedeploy)
+- [CloudFormation](#5-aws-cloudformation)
 
 ## Exam Tips
 
@@ -166,7 +178,7 @@ Source: CodeCommit, GitHub, S3, ECR. Artifact store = S3 bucket.
 
 ---
 
-# AWS CloudFormation
+# 5. AWS CloudFormation
 
 ## What is it?
 
@@ -200,11 +212,8 @@ Template → Stack → AWS Resources
 
 ## Related AWS Services
 
-[CodePipeline](#aws-codepipeline) · [Organizations](../12-governance/README.md#aws-organizations)
-
-## Interview Questions
-
-Change Set vs Update? StackSets? DeletionPolicy values?
+- [CodePipeline](#4-aws-codepipeline)
+- [Organizations](../12-governance/README.md#1-aws-organizations)
 
 ## Exam Tips
 
@@ -216,7 +225,7 @@ DeletionPolicy: Delete, Retain, Snapshot. Change Set = preview. StackSets = mult
 
 ---
 
-# AWS Systems Manager
+# 6. AWS Systems Manager
 
 ## What is it?
 
@@ -241,11 +250,14 @@ Systems Manager → SSM Agent → Run Command / Patch / Session
 | **State Manager** | Maintain desired configuration state |
 | **Automation Document** | Reusable SSM automation runbooks |
 
-## Advantages & Limitations
+## Advantages
 
-**+** No SSH keys (Session Manager), centralized patching, automation  
-**−** Requires SSM Agent · VPC endpoints for private instances
+- No SSH keys (Session Manager), centralized patching, automation
 
+## Limitations
+
+- Requires SSM Agent
+- VPC endpoints for private instances
 ## Comparison
 
 | Session Manager | SSH |
@@ -255,7 +267,9 @@ Systems Manager → SSM Agent → Run Command / Patch / Session
 
 ## Related AWS Services
 
-[EC2](../01-compute/README.md#amazon-ec2) · [Secrets Manager](../07-security/README.md#aws-secrets-manager) · [CloudWatch](../08-monitoring/README.md#amazon-cloudwatch)
+- [EC2](../01-compute/README.md#1-amazon-ec2)
+- [Secrets Manager](../07-security/README.md#3-aws-secrets-manager)
+- [CloudWatch](../08-monitoring/README.md#1-amazon-cloudwatch)
 
 ## Exam Tips
 

@@ -2,11 +2,16 @@
 
 Docker fundamentals through AWS container orchestration.
 
-**Topics:** [Docker](#docker) · [ECR](#amazon-ecr) · [ECS](#amazon-ecs) · [EKS](#amazon-eks) · [Fargate](#aws-fargate)
+**Topics:**
+1. [Docker](#1-docker)
+2. [ECR](#2-amazon-ecr)
+3. [ECS](#3-amazon-ecs)
+4. [EKS](#4-amazon-eks)
+5. [Fargate](#5-aws-fargate)
 
 ---
 
-# Docker
+# 1. Docker
 
 ## What is it?
 
@@ -39,7 +44,9 @@ Dockerfile → docker build → Image → Registry → docker run → Container
 
 ## Related AWS Services
 
-[ECR](#amazon-ecr) · [ECS](#amazon-ecs) · [CodeBuild](../09-devops/README.md#aws-codebuild)
+- [ECR](#2-amazon-ecr)
+- [ECS](#3-amazon-ecs)
+- [CodeBuild](../09-devops/README.md#2-aws-codebuild)
 
 ## One Line Definition
 
@@ -47,7 +54,7 @@ Dockerfile → docker build → Image → Registry → docker run → Container
 
 ---
 
-# Amazon ECR
+# 2. Amazon ECR
 
 ## What is it?
 
@@ -73,11 +80,13 @@ docker build → docker push → ECR Repo → ECS/EKS pull → Run
 
 ## Related AWS Services
 
-[ECS](#amazon-ecs) · [EKS](#amazon-eks) · [Inspector](../07-security/README.md#amazon-inspector)
+- [ECS](#3-amazon-ecs)
+- [EKS](#4-amazon-eks)
+- [Inspector](../07-security/README.md#6-amazon-inspector)
 
 ## Exam Tips
 
-URI: `{account}.dkr.ecr.{region}.amazonaws.com/{repo}:{tag}`
+- URI: `{account}.dkr.ecr.{region}.amazonaws.com/{repo}:{tag}`
 
 ## One Line Definition
 
@@ -85,7 +94,7 @@ URI: `{account}.dkr.ecr.{region}.amazonaws.com/{repo}:{tag}`
 
 ---
 
-# Amazon ECS
+# 3. Amazon ECS
 
 ## What is it?
 
@@ -117,11 +126,9 @@ ECR → Task Definition → ECS Service → Tasks → ALB
 
 ## Related AWS Services
 
-[ECR](#amazon-ecr) · [Fargate](#aws-fargate) · [Compute ECS](../01-compute/README.md#amazon-ecs)
-
-## Interview Questions
-
-Task vs Service? EC2 vs Fargate launch type?
+- [ECR](#2-amazon-ecr)
+- [Fargate](#5-aws-fargate)
+- [Compute ECS](../01-compute/README.md#3-amazon-ecs)
 
 ## One Line Definition
 
@@ -129,7 +136,7 @@ Task vs Service? EC2 vs Fargate launch type?
 
 ---
 
-# Amazon EKS
+# 4. Amazon EKS
 
 ## What is it?
 
@@ -154,7 +161,9 @@ kubectl → EKS Control Plane → Worker Nodes → Pods → ALB Ingress
 
 ## Related AWS Services
 
-[ECR](#amazon-ecr) · [Fargate](#aws-fargate) · [Compute EKS](../01-compute/README.md#amazon-eks)
+- [ECR](#2-amazon-ecr)
+- [Fargate](#5-aws-fargate)
+- [Compute EKS](../01-compute/README.md#4-amazon-eks)
 
 ## Exam Tips
 
@@ -166,7 +175,7 @@ IRSA = IAM Roles for Service Accounts (pod-level permissions). Control plane = $
 
 ---
 
-# AWS Fargate
+# 5. AWS Fargate
 
 ## What is it?
 
@@ -198,7 +207,9 @@ ECR → Task Definition (CPU/RAM) → Fargate runs Task → ALB
 
 ## Related AWS Services
 
-[ECS](#amazon-ecs) · [EKS](#amazon-eks) · [Compute Fargate](../01-compute/README.md#aws-fargate)
+- [ECS](#3-amazon-ecs)
+- [EKS](#4-amazon-eks)
+- [Compute Fargate](../01-compute/README.md#5-aws-fargate)
 
 ## One Line Definition
 
